@@ -46,6 +46,7 @@ pip install flash-attn --no-build-isolation
 
 ### 5.1 VLN-CE evaluation scripts (RxR / R2R)
 
+You can download our model [here](https://disk.pku.edu.cn/link/AAFD453AC93DEE4A5F8C84C14CC73D0AC1).
 This repo provides evaluation runners:
 
 - `eval_vln_rxr_6.py`
