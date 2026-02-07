@@ -49,7 +49,6 @@ pip install flash-attn --no-build-isolation
 You can download our model [here](https://disk.pku.edu.cn/link/AAFD453AC93DEE4A5F8C84C14CC73D0AC1).
 This repo provides evaluation runners:
 
-- `eval_vln_rxr_6.py`
 - `eval_vln_r2r_6.py`
 
 and a launcher script: `eval.sh`.
