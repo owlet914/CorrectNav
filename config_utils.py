@@ -12,20 +12,20 @@ from habitat.config.default_structured_configs import (
 )
 import matplotlib.pyplot as plt
 import numpy as np
-HM3D_CONFIG_PATH = "/LingXi/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_hm3d.yaml"
-MP3D_CONFIG_PATH = "/LingXi/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_mp3d.yaml"
-PROCTHOR_CONFIG_PATH = "/LingXi/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_procthor-hab.yaml"
-HSSD_CONFIG_PATH = "/LingXi/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_hssd-hab.yaml"
-R2R_CONFIG_PATH = "/LingXi/habitat-lab/habitat-lab/habitat/config/benchmark/nav/vln_r2r.yaml"   
-RXR_CONFIG_PATH = "/LingXi/habitat-lab/habitat-lab/habitat/config/benchmark/nav/vln_rxr.yaml"    
+HM3D_CONFIG_PATH = "/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_hm3d.yaml"
+MP3D_CONFIG_PATH = "/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_mp3d.yaml"
+PROCTHOR_CONFIG_PATH = "/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_procthor-hab.yaml"
+HSSD_CONFIG_PATH = "/habitat-lab/habitat-lab/habitat/config/benchmark/nav/objectnav/objectnav_hssd-hab.yaml"
+R2R_CONFIG_PATH = "/habitat-lab/habitat-lab/habitat/config/benchmark/nav/vln_r2r.yaml"   
+RXR_CONFIG_PATH = "/habitat-lab/habitat-lab/habitat/config/benchmark/nav/vln_rxr.yaml"    
 
 def hm3d_config(path:str=HM3D_CONFIG_PATH,stage:str='val'):
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
-        habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/objectnav/hm3d/v2/{split}/{split}.json.gz"
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/hm3d_v0.2/hm3d_annotated_basis.scene_dataset_config.json"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/objectnav/hm3d/v2/{split}/{split}.json.gz"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/hm3d_v0.2/hm3d_annotated_basis.scene_dataset_config.json"
         habitat_config.habitat.task.measurements.update(
         {
             "top_down_map": TopDownMapMeasurementConfig(
@@ -54,9 +54,9 @@ def hssd_config(path:str=HSSD_CONFIG_PATH,stage:str='val'):
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes/hssd-hab/scenes"
-        habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/objectnav/hssd-hab/{split}/{split}.json.gz"
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/hssd-hab/hssd-hab.scene_dataset_config.json"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes/hssd-hab/scenes"
+        habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/objectnav/hssd-hab/{split}/{split}.json.gz"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/hssd-hab/hssd-hab.scene_dataset_config.json"
         habitat_config.habitat.simulator.agents.main_agent.sim_sensors.depth_sensor.max_depth=5.0
         habitat_config.habitat.simulator.agents.main_agent.sim_sensors.depth_sensor.normalize_depth=False
     return habitat_config
@@ -65,9 +65,9 @@ def mp3d_config(path:str=MP3D_CONFIG_PATH,stage:str='val'):
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
-        habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/objectnav/mp3d/v1/{split}/{split}.json.gz"
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/objectnav/mp3d/v1/{split}/{split}.json.gz"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.task.measurements.update(
         {
             "top_down_map": TopDownMapMeasurementConfig(
@@ -96,9 +96,9 @@ def procthor_config(path:str=PROCTHOR_CONFIG_PATH,stage:str='val'):
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes/ai2thor-hab/ai2thor-hab/configs/scenes/ProcTHOR"
-        habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/objectnav/procthor-hab/{split}/{split}.json.gz"
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/ai2thor-hab/ai2thor-hab/ai2thor-hab.scene_dataset_config.json"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes/ai2thor-hab/ai2thor-hab/configs/scenes/ProcTHOR"
+        habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/objectnav/procthor-hab/{split}/{split}.json.gz"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/ai2thor-hab/ai2thor-hab/ai2thor-hab.scene_dataset_config.json"
         habitat_config.habitat.task.measurements.update(
         {
             "top_down_map": TopDownMapMeasurementConfig(
@@ -126,14 +126,14 @@ def r2r_config(path:str=R2R_CONFIG_PATH,stage:str='val_seen', part_idx=None, img
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
         # habitat_config.habitat.dataset.data_path = "/vepfs-cnsh4137610c2f4c/algo/user9/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
         if part_idx == None:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/sampled613_{split}.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/sampled613_{split}.json.gz"
         else:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/sampled613_{split}_partidx.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/sampled613_{split}_partidx.json.gz"
             habitat_config.habitat.dataset.data_path = habitat_config.habitat.dataset.data_path.replace("idx", part_idx)
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.simulator.turn_angle = 30
 
         habitat_config.habitat.task.actions.update({
@@ -178,14 +178,14 @@ def r2r_w_config(path:str=R2R_CONFIG_PATH,stage:str='val_unseen', part_idx=None,
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
         # habitat_config.habitat.dataset.data_path = "/vepfs-cnsh4137610c2f4c/algo/user9/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
         if part_idx == None:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
         else:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}_partidx.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}_partidx.json.gz"
             habitat_config.habitat.dataset.data_path = habitat_config.habitat.dataset.data_path.replace("idx", part_idx)
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.simulator.turn_angle = 30
 
         habitat_config.habitat.task.actions.update({
@@ -231,14 +231,14 @@ def r2r_train_config(path:str=R2R_CONFIG_PATH,stage:str='val_seen', part_idx=Non
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
         if part_idx == None:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
         else:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}_partidx.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}_partidx.json.gz"
             habitat_config.habitat.dataset.data_path = habitat_config.habitat.dataset.data_path.replace("idx", part_idx)
         print(habitat_config.habitat.dataset.data_path)
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.simulator.turn_angle = 30
 
         habitat_config.habitat.task.actions.update({
@@ -284,15 +284,15 @@ def rxr_train_config(path:str=RXR_CONFIG_PATH,stage:str='train',part_idx=None,im
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
         if part_idx == None:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}.json.gz"
         else:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}_partidx.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}_partidx.json.gz"
             habitat_config.habitat.dataset.data_path = habitat_config.habitat.dataset.data_path.replace("idx", part_idx)
         print(habitat_config.habitat.dataset.data_path)
-        #habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}_guide.json.gz"
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        #habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}_guide.json.gz"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.simulator.turn_angle = 30
 
         habitat_config.habitat.task.actions.update({
@@ -337,14 +337,14 @@ def rxr_config(path:str=RXR_CONFIG_PATH,stage:str='val_unseen', part_idx=None, i
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
         # habitat_config.habitat.dataset.data_path = "/vepfs-cnsh4137610c2f4c/algo/user9/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
         if part_idx == None:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/sampled_{split}_guide_en.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/sampled_{split}_guide_en.json.gz"
         else:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/sampled613_{split}_partidx.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/sampled613_{split}_partidx.json.gz"
             habitat_config.habitat.dataset.data_path = habitat_config.habitat.dataset.data_path.replace("idx", part_idx)
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.simulator.turn_angle = 30
 
         habitat_config.habitat.task.actions.update({
@@ -391,14 +391,14 @@ def rxr_w_config(path:str=RXR_CONFIG_PATH,stage:str='val_unseen', part_idx=None,
     habitat_config = habitat.get_config(path)
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
-        habitat_config.habitat.dataset.scenes_dir = "/LingXi/habitat-data-0.2.5/scenes"
+        habitat_config.habitat.dataset.scenes_dir = "/habitat-data-0.2.5/scenes"
         # habitat_config.habitat.dataset.data_path = "/vepfs-cnsh4137610c2f4c/algo/user9/habitat-data-0.2.5/datasets/vlnnav/r2r/{split}/{split}.json.gz"
         if part_idx == None:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}_guide_en.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/{split}_guide_en.json.gz"
         else:
-            habitat_config.habitat.dataset.data_path = "/LingXi/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/sampled613_{split}_partidx.json.gz"
+            habitat_config.habitat.dataset.data_path = "/habitat-data-0.2.5/datasets/vlnnav/rxr/{split}/sampled613_{split}_partidx.json.gz"
             habitat_config.habitat.dataset.data_path = habitat_config.habitat.dataset.data_path.replace("idx", part_idx)
-        habitat_config.habitat.simulator.scene_dataset = "/LingXi/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
+        habitat_config.habitat.simulator.scene_dataset = "/habitat-data-0.2.5/scenes/mp3d/mp3d.scene_dataset_config.json"
         habitat_config.habitat.simulator.turn_angle = 30
 
         habitat_config.habitat.task.actions.update({
