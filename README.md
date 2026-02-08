@@ -30,7 +30,7 @@ and prepare the VLN datasets (R2R / RxR) following upstream instructions:
 - habitat-sim: https://github.com/facebookresearch/habitat-sim
 - habitat-lab: https://github.com/facebookresearch/habitat-lab
   
-Follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the scene dataset and episodes dataset. Create a new folder named habitat-data-0.2.5 to place all the scene data.
+Follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the scene dataset and episodes dataset. Create a new folder named habitat-data-0.2.5 to place all the scene data in /habitat-data-0.2.5/scenes and all the episodes data in /habitat-data-0.2.5/datasets.
 
 ### 1.3 Install CorrectNav dependencies
 
