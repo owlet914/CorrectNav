@@ -147,7 +147,7 @@ if __name__ == "__main__":
     while True:
         obs = env.reset()
         instr = obs['instruction']['text']
-        file_path = os.path.join('/LingXi/LLaVA-NeXT/vln_eval', pretrained.split('/')[-2] + f"_ckpt-{ckpt_chosen}.json")
+        file_path = os.path.join('/LLaVA-NeXT/vln_eval', pretrained.split('/')[-2] + f"_ckpt-{ckpt_chosen}.json")
         if os.path.exists(file_path):
              file=locked_load_json(file_path)                
         else:
