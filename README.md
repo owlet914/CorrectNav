@@ -30,7 +30,35 @@ and prepare the VLN datasets (R2R / RxR) following upstream instructions:
 - habitat-sim: https://github.com/facebookresearch/habitat-sim
 - habitat-lab: https://github.com/facebookresearch/habitat-lab
   
-Follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the scene dataset and episodes dataset. Create a new folder named habitat-data-0.2.5 to place all the scene data in /habitat-data-0.2.5/scenes and all the episodes data in /habitat-data-0.2.5/datasets.
+Follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the scene dataset and episodes dataset. Create a new folder named habitat-data-0.2.5 to place all the scene data in /habitat-data-0.2.5/scenes and all the episodes data in /habitat-data-0.2.5/datasets. Orgnize the datasets like below：
+```bash
+habitat-data-0.2.5/
+├── datasets/
+│   └── vlnnav/
+│       ├── r2r/
+│       │   ├── test/
+│       │   ├── train/
+│       │   │   ├── decompose.py
+│       │   │   ├── filter.json
+│       │   │   └── ...
+│       │   ├── val_seen/
+│       │   └── val_unseen/
+│       └── rxr/
+│           ├── test_challenge/
+│           ├── train/
+│           ├── val_seen/
+│           └── val_unseen/
+└── scenes/
+    └── mp3d/
+        ├── 17DRP5sb8fy/
+        │   ├── 17DRP5sb8fy.glb
+        │   ├── 17DRP5sb8fy.house
+        │   ├── 17DRP5sb8fy.navmesh
+        │   └── ...
+        ├── 1LXtFkjw3qL/
+        ├── 1pXnuDYAj8r/
+        └── ...
+```
 
 ### 1.3 Install CorrectNav dependencies
 
