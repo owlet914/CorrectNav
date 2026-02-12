@@ -1,7 +1,6 @@
 
 cleanup() {
     echo "Terminating all processes..."
-    pkill -f eval_vln_rxr_6.py
     pkill -f eval_vln_r2r_6.py
     echo "All processes terminated."
 }
