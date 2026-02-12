@@ -7,8 +7,7 @@ from habitat.config.default_structured_configs import (
     FogOfWarConfig,
     TopDownMapMeasurementConfig,
     LookUpActionConfig,
-    LookDownActionConfig,
-    ndtwConfig
+    LookDownActionConfig
 )
 import matplotlib.pyplot as plt
 import numpy as np
@@ -369,8 +368,7 @@ def rxr_config(path:str=RXR_CONFIG_PATH,stage:str='val_unseen', part_idx=None, i
                     fov=79,
                 ),
             ),
-            "collisions": CollisionsMeasurementConfig(),
-            "ndtw": ndtwConfig(),
+            "collisions": CollisionsMeasurementConfig()
         })
 
         habitat_config.habitat.simulator.agents.main_agent.sim_sensors.rgb_sensor.width=img_size
@@ -423,8 +421,7 @@ def rxr_w_config(path:str=RXR_CONFIG_PATH,stage:str='val_unseen', part_idx=None,
                     fov=79,
                 ),
             ),
-            "collisions": CollisionsMeasurementConfig(),
-            "ndtw": ndtwConfig(),
+            "collisions": CollisionsMeasurementConfig()
         })
 
         habitat_config.habitat.simulator.agents.main_agent.sim_sensors.rgb_sensor.width=img_size
