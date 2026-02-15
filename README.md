@@ -12,25 +12,24 @@ You can see our paper in [CorrectNav](https://arxiv.org/abs/2508.10416) and more
 ## 1) Installation
 
 ### 1.1 Create an environment
-
+We test the following process on an RTX 3090 workstation with Ubuntu22.04 and CUDA 12.1
 ```bash
-conda create -n CorrectNav python=3.10 -y
+conda create -n CorrectNav python=3.10 cmake=3.14.0 -y
 conda activate CorrectNav
 ```
 
-### 1.2 Install Habitat and datasets
+### 1.2 Install Habitat Simulator
 
 Install:
 
-- habitat-sim **0.3.3**
-- habitat-lab **0.3.1**
+- habitat-sim **0.3.3**: https://github.com/facebookresearch/habitat-sim
+- habitat-lab **0.3.1**: https://github.com/facebookresearch/habitat-lab 
 
-and prepare the VLN datasets (R2R / RxR) following upstream instructions:
+### 1.3 Prepare VLN-CE Dataset
 
-- habitat-sim: https://github.com/facebookresearch/habitat-sim
-- habitat-lab: https://github.com/facebookresearch/habitat-lab
-  
-Follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the scene dataset and episodes dataset. Create a new folder named habitat-data-0.2.5 to place all the scene data in /habitat-data-0.2.5/scenes and all the episodes data in /habitat-data-0.2.5/datasets. Orgnize the datasets like below：
+Prepare the VLN datasets (R2R / RxR) follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the MP3D scene dataset and VLN-CE episodes dataset. 
+
+Create a new folder named habitat-data-0.2.5 to place all the scene data in /habitat-data-0.2.5/scenes and all the episodes data in /habitat-data-0.2.5/datasets. Orgnize the datasets like below：
 ```bash
 habitat-data-0.2.5/
 ├── datasets/
@@ -60,7 +59,7 @@ habitat-data-0.2.5/
         └── ...
 ```
 
-### 1.3 Install CorrectNav dependencies
+### 1.4 Install CorrectNav dependencies
 
 From the repo root:
 
