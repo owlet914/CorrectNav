@@ -1,6 +1,6 @@
 <div align="center">
 
-# CorrectNav 🧭
+# AAAI 2025 - CorrectNav 🧭
 
 **Self-Correction Flywheel Empowers Vision-Language-Action Navigation Model**
 
