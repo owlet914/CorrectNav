@@ -23,11 +23,11 @@ conda activate CorrectNav
 Install:
 
 - habitat-lab **0.3.1**: https://github.com/facebookresearch/habitat-lab
-      ```bash
-      git clone --branch stable https://github.com/facebookresearch/habitat-lab.git
-      cd habitat-lab
-      pip install -e habitat-lab  # install habitat_lab
-      ```
+```bash
+git clone --branch stable https://github.com/facebookresearch/habitat-lab.git
+cd habitat-lab
+pip install -e habitat-lab  # install habitat_lab
+```
 - habitat-sim **0.3.3**: https://github.com/facebookresearch/habitat-sim
 
 
