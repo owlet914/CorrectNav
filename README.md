@@ -85,27 +85,32 @@ habitat-data-0.2.5/
 
 ### 5.1 VLN-CE evaluation scripts (R2R)
 
-You can download our model [here](https://disk.pku.edu.cn/link/AAFD453AC93DEE4A5F8C84C14CC73D0AC1).
-This repo provides evaluation runners:
+This repository provides the following scripts for evaluation:
 
-- `eval_vln_r2r_6.py`
+* **Runner:** `eval_vln_r2r_6.py`
+* **Launcher:** `eval.sh`
 
-and a launcher script: `eval.sh`.
+### Download CorrectNav Model Weights
 
-Before running, update the evaluation scripts:
+You can download our model weights [here](https://disk.pku.edu.cn/link/AAFD453AC93DEE4A5F8C84C14CC73D0AC1).
 
-- `pretrained = "YOUR MODEL PATH"`
-- `ckpt_chosen = ...` (used for naming logs / json outputs)
 
-Then run:
+### Configuration
+
+Before running, please update the evaluation scripts with your local settings:
+
+* `pretrained = "YOUR MODEL PATH"`
+* `ckpt_chosen = ...` *(Used for naming logs and JSON outputs)*
+
+### Evaluation
+Start the evaluation by running the launcher script:
 
 ```bash
 bash eval.sh
+
 ```
 
-`eval.sh` currently launches 8 GPU workers (`CUDA_VISIBLE_DEVICES=0..7`). Adjust the loop if you have a different GPU count.
-
-
+> **Note:** `eval.sh` is currently configured to launch 8 GPU workers (`CUDA_VISIBLE_DEVICES=0..7`). Please adjust the loop inside the script if you have a different GPU count.
 
 ## BibTex
 
