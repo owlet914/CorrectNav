@@ -81,11 +81,9 @@ habitat-data-0.2.5/
 
 
 
-## 2) Evaluate   Our    Model
+## 2) Evaluate CorrectNav on R2R-CE Benchmark
 
-### 5.1 VLN-CE evaluation scripts (R2R)
-
-This repository provides the following scripts for evaluation:
+We provide the following scripts for evaluation:
 
 * **Runner:** `eval_vln_r2r_6.py`
 * **Launcher:** `eval.sh`
