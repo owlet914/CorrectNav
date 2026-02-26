@@ -12,7 +12,7 @@ You can see our paper in [CorrectNav](https://arxiv.org/abs/2508.10416) and more
 ## 1) Installation
 
 ### 1.1 Create an environment
-We test the following process on an RTX 3090 workstation with Ubuntu22.04 and CUDA 12.1
+We test the following process on an RTX 3090 workstation with Ubuntu 22.04 and CUDA 12.1
 ```bash
 conda create -n CorrectNav python=3.10 cmake=3.14.0 -y
 conda activate CorrectNav
