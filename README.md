@@ -32,7 +32,20 @@ pip install -e habitat-lab  # install habitat_lab
 
 We follow **Build from Source** section to build habitat-sim in headless mode with CUDA.
 
-### 1.3 Prepare VLN-CE Dataset
+
+### 1.3 Install CorrectNav dependencies
+
+From the repo root:
+
+```bash
+pip install --upgrade pip
+pip install -e ".[train]"
+pip install flash-attn --no-build-isolation
+```
+
+> If you only need inference/serving, you can start from `pip install -e ".[standalone]"` and then install extra runtime deps as needed.
+
+### 1.4 Prepare VLN-CE Dataset
 
 Prepare the VLN datasets (R2R / RxR) follow the instructions in the [VLN-CE Data Section](https://github.com/jacobkrantz/VLN-CE?tab=readme-ov-file#data) to set up the MP3D scene dataset and VLN-CE episodes dataset. 
 
@@ -66,17 +79,7 @@ habitat-data-0.2.5/
         └── ...
 ```
 
-### 1.4 Install CorrectNav dependencies
 
-From the repo root:
-
-```bash
-pip install --upgrade pip
-pip install -e ".[train]"
-pip install flash-attn --no-build-isolation
-```
-
-> If you only need inference/serving, you can start from `pip install -e ".[standalone]"` and then install extra runtime deps as needed.
 
 ## 2) Evaluate   Our    Model
 
