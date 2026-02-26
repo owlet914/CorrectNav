@@ -28,8 +28,8 @@ git clone --branch stable https://github.com/facebookresearch/habitat-lab.git
 cd habitat-lab
 pip install -e habitat-lab  # install habitat_lab
 ```
-- habitat-sim **0.3.3**: https://github.com/facebookresearch/habitat-sim
-
+- [habitat-sim **0.3.3**](https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md)
+We follow **Build from Source** section to build habitat-sim in headless mode with CUDA.
 
 ### 1.3 Prepare VLN-CE Dataset
 
