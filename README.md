@@ -129,6 +129,88 @@ bash eval.sh
 
 ---
 
+## 🧩 3. Data Generation
+
+### 3.1 VLN-CE Data Collection
+
+Use `collect_training_data.sh` to launch multiple `collect_training_data.py` processes.
+
+```bash
+bash collect_training_data.sh \
+  r2r \
+  /path/to/vlnce_r2r_data \
+  16
+
+bash collect_training_data.sh \
+  rxr \
+  /path/to/vlnce_rxr_data \
+  20
+
+```
+
+### 3.2 Correction Data Collection
+
+Use `eval_train_fly.sh` to launch multiple `eval_train_fly.py` processes.
+
+```bash
+bash eval_train_fly.sh \
+  r2r \
+  /path/to/model_checkpoint \
+  /path/to/fly_r2r_data \
+  /path/to/logs \
+  8
+
+bash eval_train_fly.sh \
+  rxr \
+  /path/to/model_checkpoint \
+  /path/to/fly_rxr_data \
+  /path/to/logs \
+  8
+
+```
+
+### 3.3 Image Data to Video
+
+Use `rgbs2video.py` to convert saved RGB frames into per-step video files.
+
+```bash
+python rgbs2video.py \
+  --part_idx 1 \
+  --n_part 32 \
+  --raw_training_data_path /path/to/fly_r2r_data \
+  --target_training_data_path /path/to/r2r_video_fly
+
+python rgbs2video.py \
+  --part_idx 1 \
+  --n_part 32 \
+  --raw_training_data_path /path/to/fly_rxr_data \
+  --target_training_data_path /path/to/rxr_video_fly
+
+```
+
+### 3.4 Training JSON Generation
+
+Use `train_json.py` to generate the training JSON consumed by the post-training stage.
+
+```bash
+python train_json.py \
+  --raw_training_data_path /path/to/fly_r2r_data \
+  --video_root_path /path/to/r2r_video_fly \
+  --output_json_path /path/to/vlnce_r2r_video_fly.json \
+  --data_source vlnce_r2r \
+  --gt_step 6
+
+python train_json.py \
+  --raw_training_data_path /path/to/fly_rxr_data \
+  --video_root_path /path/to/rxr_video_fly \
+  --output_json_path /path/to/vlnce_rxr_video_fly.json \
+  --data_source vlnce_rxr \
+  --gt_step 6
+
+```
+
+---
+
 ## 📝 Citation
 
 If you find our work, code, or model weights helpful in your research, please consider citing our paper:
