@@ -179,7 +179,7 @@ if __name__ == "__main__":
             video, frame_time, video_time = process_images_as_video(rgb_input_traj, original_fps = 1, max_frames_num = 12, target_fps=1, force_sample=False)
             video = image_processor.preprocess(video, return_tensors="pt")["pixel_values"].cuda().half()
             video = [video]
-            output = correct_inference(conv_template, video, frame_time, video_time,  tokenizer, instr2, gt_step)
+            output = correct_inference(conv_template, video, frame_time, video_time,  tokenizer, instr, gt_step)
             output=output.split(',')
             for i in range(4):               
                 match = re.search(r'\b(forward|turn left|turn right|stop)\b', output[i], re.IGNORECASE)
@@ -239,4 +239,3 @@ if __name__ == "__main__":
         num_eval = len(success_rates)
         eval_result = 'Success:%.3f,SPL:%.2f,Nav Error:%.2f,OS:%.3f'%(avg_sr, avg_spl, avg_dtg,avg_os)
         logging.info(f"[{num_eval}] Eval Results: "+eval_result)
-

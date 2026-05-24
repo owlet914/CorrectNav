@@ -1,7 +1,7 @@
-from llava.model.builder import load_pretrained_model
-from llava.mm_utils import tokenizer_image_token
-from llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN
-from llava.conversation import conv_templates
+from CorrectNav.model.builder import load_pretrained_model
+from CorrectNav.mm_utils import tokenizer_image_token
+from CorrectNav.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN
+from CorrectNav.conversation import conv_templates
 import copy
 import os
 import torch

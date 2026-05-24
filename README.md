@@ -131,7 +131,26 @@ bash scripts/eval.sh
 
 ## 🧩 3. Data Generation
 
-### 3.1 VLN-CE Data Collection
+### 3.1 VLN-CE Dataset Split
+
+Before launching parallel data collection, split the training JSON.GZ file into part files used by `--part_idx`.
+
+```bash
+python data/split_vlnce_dataset.py \
+  --input_json_gz /habitat-data-0.2.5/datasets/vlnnav/r2r/train/train.json.gz \
+  --output_dir /habitat-data-0.2.5/datasets/vlnnav/r2r/train \
+  --split train \
+  --n_part 16
+
+python data/split_vlnce_dataset.py \
+  --input_json_gz /habitat-data-0.2.5/datasets/vlnnav/rxr/train/train.json.gz \
+  --output_dir /habitat-data-0.2.5/datasets/vlnnav/rxr/train \
+  --split train \
+  --n_part 20
+
+```
+
+### 3.2 VLN-CE Data Collection
 
 Use `scripts/collect_training_data.sh` to launch multiple `data/collect_training_data.py` processes.
 
@@ -148,7 +167,43 @@ bash scripts/collect_training_data.sh \
 
 ```
 
-### 3.2 Correction Data Collection
+### 3.3 VLN-CE Image Data to Video
+
+Use `scripts/vlnce_rgbs2video.sh` to convert collected VLN-CE RGB frames into per-step video files.
+
+```bash
+bash scripts/vlnce_rgbs2video.sh \
+  /path/to/vlnce_r2r_data \
+  /path/to/vlnce_r2r_video \
+  32
+
+bash scripts/vlnce_rgbs2video.sh \
+  /path/to/vlnce_rxr_data \
+  /path/to/vlnce_rxr_video \
+  32
+
+```
+
+### 3.4 Trajectory-to-Instruction JSON Generation
+
+Use `data/traj2instruct.py` to generate trajectory-to-instruction training JSON after VLN-CE trajectory collection.
+
+```bash
+python data/traj2instruct.py \
+  --raw_training_data_path /path/to/vlnce_r2r_data \
+  --video_root_path /path/to/vlnce_r2r_video \
+  --output_json_path /path/to/vlnce_r2r_t2i.json \
+  --data_source vlnce_r2r_t2i
+
+python data/traj2instruct.py \
+  --raw_training_data_path /path/to/vlnce_rxr_data \
+  --video_root_path /path/to/vlnce_rxr_video \
+  --output_json_path /path/to/vlnce_rxr_t2i.json \
+  --data_source vlnce_rxr_t2i
+
+```
+
+### 3.5 Correction Data Collection
 
 Use `scripts/eval_train_fly.sh` to launch multiple `data/eval_train_fly.py` processes.
 
@@ -169,26 +224,24 @@ bash scripts/eval_train_fly.sh \
 
 ```
 
-### 3.3 Image Data to Video
+### 3.6 Correction Image Data to Video
 
-Use `data/rgbs2video.py` to convert saved RGB frames into per-step video files.
+Use `scripts/fly_rgbs2video.sh` to convert saved correction RGB frames into per-step video files.
 
 ```bash
-python data/rgbs2video.py \
-  --part_idx 1 \
-  --n_part 32 \
-  --raw_training_data_path /path/to/fly_r2r_data \
-  --target_training_data_path /path/to/r2r_video_fly
+bash scripts/fly_rgbs2video.sh \
+  /path/to/fly_r2r_data \
+  /path/to/r2r_video_fly \
+  32
 
-python data/rgbs2video.py \
-  --part_idx 1 \
-  --n_part 32 \
-  --raw_training_data_path /path/to/fly_rxr_data \
-  --target_training_data_path /path/to/rxr_video_fly
+bash scripts/fly_rgbs2video.sh \
+  /path/to/fly_rxr_data \
+  /path/to/rxr_video_fly \
+  32
 
 ```
 
-### 3.4 Training JSON Generation
+### 3.7 Training JSON Generation
 
 Use `data/train_json.py` to generate the training JSON consumed by the post-training stage.
 
