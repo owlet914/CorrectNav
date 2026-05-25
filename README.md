@@ -4,6 +4,28 @@
 
 **Self-Correction Flywheel Empowers Vision-Language-Action Navigation Model**
 
+<img src="site_assets/1.png" alt="CorrectNav Overview" width="900">
+
+<h3>Real-Robot Demonstrations</h3>
+
+<table>
+  <tr>
+    <td><video src="site_assets/18.mp4" width="240" muted loop controls playsinline></video></td>
+    <td><video src="site_assets/19.mp4" width="240" muted loop controls playsinline></video></td>
+    <td><video src="site_assets/20.mp4" width="240" muted loop controls playsinline></video></td>
+  </tr>
+  <tr>
+    <td><video src="site_assets/1.mp4" width="240" muted loop controls playsinline></video></td>
+    <td><video src="site_assets/2.mp4" width="240" muted loop controls playsinline></video></td>
+    <td><video src="site_assets/3.mp4" width="240" muted loop controls playsinline></video></td>
+  </tr>
+  <tr>
+    <td><video src="site_assets/4.mp4" width="240" muted loop controls playsinline></video></td>
+    <td><video src="site_assets/5.mp4" width="240" muted loop controls playsinline></video></td>
+    <td><video src="site_assets/6.mp4" width="240" muted loop controls playsinline></video></td>
+  </tr>
+</table>
+
 </div>
 
 Existing vision-and-language navigation models often deviate from the correct trajectory when executing instructions. However, these models lack effective error correction capability, hindering their recovery from errors.
