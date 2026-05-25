@@ -1,0 +1,9 @@
+datasets:
+  - json_path: /path/to/vlnce_r2r_t2i.json
+    sampling_strategy: all
+  - json_path: /path/to/vlnce_rxr_t2i.json
+    sampling_strategy: all
+  - json_path: /path/to/vlnce_r2r_video_fly.json
+    sampling_strategy: all
+  - json_path: /path/to/vlnce_rxr_video_fly.json
+    sampling_strategy: all
