@@ -3,6 +3,14 @@ datasets:
     sampling_strategy: all
   - json_path: /path/to/vlnce_rxr_t2i.json
     sampling_strategy: all
+  - json_path: /path/to/LLaVA-Video-178K/0_30_s_academic_v0_1.json
+    sampling_strategy: all
+  - json_path: /path/to/LLaVA-Video-178K/0_30_s_activitynetqa.json
+    sampling_strategy: all
+  - json_path: /path/to/LLaVA-Video-178K/0_30_s_nextqa.json
+    sampling_strategy: all
+  - json_path: /path/to/LLaVA-Video-178K/0_30_s_perceptiontest.json
+    sampling_strategy: all
   - json_path: /path/to/vlnce_r2r_video_fly.json
     sampling_strategy: all
   - json_path: /path/to/vlnce_rxr_video_fly.json
