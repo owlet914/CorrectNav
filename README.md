@@ -4,6 +4,8 @@
 
 **Self-Correction Flywheel Empowers Vision-Language-Action Navigation Model**
 
+<a href="https://arxiv.org/abs/2508.10416"><b>arXiv Paper</b></a>
+
 <img src="site_assets/1.png" alt="CorrectNav Overview" width="900">
 
 <h3>Real-Robot Demonstrations</h3>
