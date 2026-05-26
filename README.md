@@ -10,18 +10,6 @@
 
 <img src="site_assets/real_robot_grid.gif" alt="Real-Robot Demonstrations" width="720">
 
-<p>
-  <a href="site_assets/18.mp4">Video 1</a> ·
-  <a href="site_assets/19.mp4">Video 2</a> ·
-  <a href="site_assets/20.mp4">Video 3</a> ·
-  <a href="site_assets/1.mp4">Video 4</a> ·
-  <a href="site_assets/2.mp4">Video 5</a> ·
-  <a href="site_assets/3.mp4">Video 6</a> ·
-  <a href="site_assets/4.mp4">Video 7</a> ·
-  <a href="site_assets/5.mp4">Video 8</a> ·
-  <a href="site_assets/6.mp4">Video 9</a>
-</p>
-
 </div>
 
 Existing vision-and-language navigation models often deviate from the correct trajectory when executing instructions. However, these models lack effective error correction capability, hindering their recovery from errors.
